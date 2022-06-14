@@ -13,8 +13,7 @@ namespace tictactoe2
     public partial class Maingame : Form
     {
         char turn = 'X';
-        double turn_count = 0;
-        bool turn1 = true;
+
         public Maingame()
         {
             InitializeComponent();
@@ -34,11 +33,9 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
-
+                Winner();
             }
         }
-
 
         private void b2_Click(object sender, EventArgs e)
         {
@@ -54,7 +51,7 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
+                Winner();
             }
         }
 
@@ -72,7 +69,7 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
+                Winner();
             }
         }
 
@@ -89,8 +86,8 @@ namespace tictactoe2
                 {
                     turn = 'X';
                 }
+                Winner();
 
-                checkTheWinner();
             }
         }
 
@@ -107,8 +104,8 @@ namespace tictactoe2
                 {
                     turn = 'X';
                 }
+                Winner();
 
-                checkTheWinner();
             }
         }
 
@@ -126,7 +123,8 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
+                Winner();
+
             }
         }
 
@@ -144,7 +142,8 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
+                Winner();
+
             }
         }
 
@@ -162,7 +161,8 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
+                Winner();
+
             }
         }
 
@@ -180,133 +180,13 @@ namespace tictactoe2
                     turn = 'X';
                 }
 
-                checkTheWinner();
-            }
-        }
-
-        private void disableButtons() //to disable the button after checking the winner
-        {
-            b1.Enabled = false;
-            b2.Enabled = false;
-            b3.Enabled = false;
-            b4.Enabled = false;
-            b5.Enabled = false;
-            b6.Enabled = false;
-            b7.Enabled = false;
-            b8.Enabled = false;
-            b9.Enabled = false;
-        }
-
-        private void checkTheWinner() //to automaticallly check the winner
-        {
-            bool there_is_a_winner = false;
-
-            //horizontal X
-            if (b1.Text == "X" && b2.Text == "X" && b3.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b4.Text == "X" && b5.Text == "X" && b6.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b7.Text == "X" && b8.Text == "X" && b9.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-
-            //diagonal X
-            else if (b3.Text == "X" && b5.Text == "X" && b7.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b1.Text == "X" && b5.Text == "X" && b9.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-
-            //vertical X
-            else if (b1.Text == "X" && b4.Text == "X" && b7.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b2.Text == "X" && b5.Text == "X" && b8.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b3.Text == "X" && b6.Text == "X" && b9.Text == "X")
-            {
-                there_is_a_winner = true;
-            }
-
-            //horizontal O
-            else if (b1.Text == "O" && b2.Text == "O" && b3.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b4.Text == "O" && b5.Text == "O" && b6.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b7.Text == "O" && b8.Text == "O" && b9.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-
-            //diagonal O
-            else if (b3.Text == "O" && b5.Text == "O" && b7.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b1.Text == "O" && b5.Text == "O" && b9.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-
-            //vertical O
-            else if (b1.Text == "O" && b4.Text == "O" && b7.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b2.Text == "O" && b5.Text == "O" && b8.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-            else if (b3.Text == "O" && b6.Text == "O" && b9.Text == "O")
-            {
-                there_is_a_winner = true;
-            }
-
-            if (there_is_a_winner)
-            {
-                disableButtons();
-
-                string winner;
-
-
-                if (turn1)
-                {
-                    winner = "O";
-                }
-                else 
-                {
-                    winner = "X";
-                }
-
-                MessageBox.Show(winner + " wins! " + "Congratulations!");
-                buttonnew.Enabled = true;
-                buttonexit.Enabled = true;
-                buttonhelp.Enabled = true;
-            }
-            else 
-            {
-                if (turn_count == 9)
-                MessageBox.Show("Draw!");
+                Winner();
             }
         }
 
         private void buttonnew_Click(object sender, EventArgs e)
         {
+            turn = 'X';
             b1.Enabled = true;
             b1.Text = "";
 
@@ -345,6 +225,131 @@ namespace tictactoe2
         {
             Application.Exit();
         }
+
+        private void Winner() //to automaticallly check the winner
+        {
+            bool winner = false;
+
+            //horizontal X
+            if (b1.Text == "X" && b2.Text == "X" && b3.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+            else if (b4.Text == "X" && b5.Text == "X" && b6.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+
+            }
+            else if (b7.Text == "X" && b8.Text == "X" && b9.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+
+            //diagonal X
+            else if (b3.Text == "X" && b5.Text == "X" && b7.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+            else if (b1.Text == "X" && b5.Text == "X" && b9.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+
+            //vertical X
+            else if (b1.Text == "X" && b4.Text == "X" && b7.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+            else if (b2.Text == "X" && b5.Text == "X" && b8.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+
+            }
+            else if (b3.Text == "X" && b6.Text == "X" && b9.Text == "X")
+            {
+                winner = true;
+                MessageBox.Show(" X wins!");
+            }
+
+            //horizontal O
+            else if (b1.Text == "O" && b2.Text == "O" && b3.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+            else if (b4.Text == "O" && b5.Text == "O" && b6.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+            else if (b7.Text == "O" && b8.Text == "O" && b9.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+
+            //diagonal O
+            else if (b3.Text == "O" && b5.Text == "O" && b7.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+
+
+            }
+            else if (b1.Text == "O" && b5.Text == "O" && b9.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+
+            //vertical O
+            else if (b1.Text == "O" && b4.Text == "O" && b7.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+            else if (b2.Text == "O" && b5.Text == "O" && b8.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+            else if (b3.Text == "O" && b6.Text == "O" && b9.Text == "O")
+            {
+                winner = true;
+                MessageBox.Show(" O wins!");
+            }
+           
+            if (winner)
+            {
+                b1.Enabled = false;
+                b2.Enabled = false;
+                b3.Enabled = false;
+                b4.Enabled = false;
+                b5.Enabled = false;
+                b6.Enabled = false;
+                b7.Enabled = false;
+                b8.Enabled = false;
+                b9.Enabled = false;
+            }
+            else
+            {
+
+            }
+
+        }
+                
+
+        }
     }
+
+
+
+
     
-}

@@ -46,6 +46,7 @@ namespace tictactoe2
             // 
             // b1
             // 
+            this.b1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b1.Location = new System.Drawing.Point(130, 182);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(111, 119);
@@ -55,6 +56,7 @@ namespace tictactoe2
             // 
             // b2
             // 
+            this.b2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b2.Location = new System.Drawing.Point(247, 182);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(111, 119);
@@ -64,6 +66,7 @@ namespace tictactoe2
             // 
             // b3
             // 
+            this.b3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b3.Location = new System.Drawing.Point(364, 182);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(111, 119);
@@ -73,6 +76,7 @@ namespace tictactoe2
             // 
             // b6
             // 
+            this.b6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b6.Location = new System.Drawing.Point(364, 307);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(111, 119);
@@ -82,6 +86,7 @@ namespace tictactoe2
             // 
             // b5
             // 
+            this.b5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b5.Location = new System.Drawing.Point(247, 307);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(111, 119);
@@ -91,6 +96,7 @@ namespace tictactoe2
             // 
             // b4
             // 
+            this.b4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b4.Location = new System.Drawing.Point(130, 307);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(111, 119);
@@ -100,6 +106,7 @@ namespace tictactoe2
             // 
             // b9
             // 
+            this.b9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b9.Location = new System.Drawing.Point(364, 432);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(111, 119);
@@ -109,6 +116,7 @@ namespace tictactoe2
             // 
             // b8
             // 
+            this.b8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b8.Location = new System.Drawing.Point(247, 432);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(111, 119);
@@ -118,6 +126,7 @@ namespace tictactoe2
             // 
             // b7
             // 
+            this.b7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b7.Location = new System.Drawing.Point(130, 432);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(111, 119);

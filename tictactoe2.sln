@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tictactoe2", "tictactoe2.csproj", "{63EF6E90-B157-445D-B195-32EABFCB61EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tictactoe final", "tictactoe final.csproj", "{63EF6E90-B157-445D-B195-32EABFCB61EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
